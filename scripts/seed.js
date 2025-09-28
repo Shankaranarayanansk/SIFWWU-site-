@@ -1,3 +1,12 @@
+require('ts-node').register({
+  transpileOnly: true,
+  compilerOptions: {
+    module: 'CommonJS',
+    moduleResolution: 'node',
+    esModuleInterop: true,
+    target: 'ES2019'
+  }
+});
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 require('dotenv').config();

@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/db/connection';
 import Service from '@/lib/models/Service';
-import { verifyAccessToken } from '@/lib/auth/jwt';
 import { z } from 'zod';
+import { authMiddleware } from '@/lib/middleware/auth';
 
 const serviceSchema = z.object({
   title: z.string().min(1, 'Title is required'),
